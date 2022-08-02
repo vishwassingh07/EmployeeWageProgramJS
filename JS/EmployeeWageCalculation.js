@@ -1,12 +1,14 @@
 console.log("Welcome To The Employee Wage Program With JS")
 
-//UC3- Using Function To Get Working Hours 
+//UC4- Calculating Wage For 20 Days In A Month
 
 const IS_FULLTIME = 1;
 const IS_PARTTIME = 2;
 const EMPWAGE_PER_HR = 20;
+const MAX_WORKING_DAYS = 20;
 let empHrs = 0;
-empCheck = Math.floor(Math.random()*10)%3;
+let totalEmpWage = 0;
+
 function GetEmployeeHrs(empCheck)
 {
     switch(empCheck)
@@ -25,7 +27,12 @@ function GetEmployeeHrs(empCheck)
             return empHrs;
     }
 }
+for(let day=1; day<=MAX_WORKING_DAYS; day++)
+{
+empCheck = Math.floor(Math.random()*10)%3;
 empWage = EMPWAGE_PER_HR * GetEmployeeHrs(empCheck);
-console.log("UC2- Employee Wage : "+ empWage);
-
+console.log("UC2- Employee Wage For day "+ day + " is : "+ empWage);
+totalEmpWage += empWage;
+}
+console.log("UC4- Total Employee Wage : " + totalEmpWage);
  
